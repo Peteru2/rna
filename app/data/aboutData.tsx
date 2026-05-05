@@ -7,7 +7,7 @@ export const sections = [
           Rev. Niyi Adebayo
         </h2>
 
-        <div className="space-y-1 text-[#4b5563] text-sm md:text-base">
+        <div className="space-y-1 text-[#4b5563] text-[16px] md:text-base">
           <p>Evangelist | Author | Leader</p>
 
           <p>

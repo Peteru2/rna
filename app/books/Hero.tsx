@@ -252,7 +252,7 @@ export default function BooksHero() {
                 <div className="absolute inset-0 bg-black/10 blur-3xl scale-90 translate-y-10 rounded-full" />
 
                 {/* BIGGER IMAGE */}
-                <div className="relative w-[340px] sm:w-[460px] md:w-[580px] lg:w-[700px] xl:w-[820px]">
+                <div className="relative w-[340px] sm:w-[460px] md:w-[580px] lg:w-[700px] ">
 
                   <Image
                     src={books[current].image}

@@ -16,13 +16,18 @@ export default function BooksSection() {
   }, [query]);
 
   return (
-    <section className="py-4 px-6 bg-gray-100 z-30">
+    <section className="py-8 px-6 bg-gray-100 z-30">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-medium tracking-wide text-gray-700">
+        <div className="flex justify-center mb-4 items-center">
+
+            <div className="w-90 h-[1px] bg-gray-300"></div>
+        
+          <h2 className="text-[16px] font-bold mx-4 font-work-sans tracking-wide text-gray-700">
             Books
           </h2>
+       
+          <div className="w-80 h-[1px] bg-gray-300"></div>
         </div>
 
         {/* Search */}
