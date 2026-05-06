@@ -39,7 +39,7 @@ export default function Biography() {
             >
               {/* LEFT LABEL */}
               <div className="flex items-start gap-4 ">
-                <h3 className="uppercase tracking-[0.2em] text-center text-xs md:text-sm font-semibold text-[#111827] whitespace-nowrap">
+                <h3 className="uppercase tracking-[0.06em] text-center  font-semibold text-[#111827] whitespace-nowrap">
                   {section.title}
                 </h3>
 

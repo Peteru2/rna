@@ -69,7 +69,7 @@ export default function Footer() {
           alt="RNA Logo"
           width={150}
           height={60}
-          className="object-contain"
+          className="object-cover"
         />
       </Link>
     </motion.div>
@@ -97,7 +97,7 @@ export default function Footer() {
       ))}
     </motion.div>
 
-    {/* CTA */}
+    <Link href={"/getInTouch"}>
     <motion.button
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -108,9 +108,9 @@ export default function Footer() {
         ease: [0.22, 1, 0.36, 1],
       }}
       whileHover={{ y: -2 }}
-      className="group flex items-center justify-center gap-3"
+      className="group flex items-center cursor-pointer justify-center gap-3"
     >
-      <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center overflow-hidden">
+      <div className="w-9 h-9  rounded-full bg-white flex items-center justify-center overflow-hidden">
         <motion.div
           whileHover={{ rotate: 45 }}
           transition={{ duration: 0.3 }}
@@ -126,6 +126,7 @@ export default function Footer() {
         Get in touch
       </span>
     </motion.button>
+    </Link>
   </div>
 
   {/* LINE */}
