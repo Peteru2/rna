@@ -23,7 +23,7 @@ const fadeUp: Variants = {
 
 export default function Biography() {
   return (
-    <section className="relative font-work-sans overflow-hidden py-28 md:py-40">
+    <section className="relative font-work-sans overflow-hidden py-28 md:py-18">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
 
         <div className="space-y-16 md:space-y-20">

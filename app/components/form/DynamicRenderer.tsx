@@ -1,10 +1,12 @@
 
 import TextField from "./fields/TextFields";
 import PhoneField from "./fields/PhoneField";
+import DateField from "./fields/DateField";
+import RadioField from "./fields/RadioField";
 // import SelectField from "./fields/SelectField";
 import TextAreaField from "./fields/TextArea";
 // import TextAreaField from "./fields/TextAreaField";
-// import CheckboxField from "./fields/CheckboxField";
+import CheckboxField from "./fields/CheckboxField";
 
 interface DynamicFieldRendererProps {
   field: any;
@@ -42,6 +44,28 @@ export default function DynamicFieldRenderer({
         />
       );
 
+      case "radio":
+  return (
+    <RadioField
+      label={field.label}
+      name={field.name}
+      options={field.options}
+      register={register}
+      error={error}
+    />
+  );
+
+case "date":
+  return (
+    <DateField
+      label={field.label}
+      name={field.name}
+      register={register}
+      error={error}
+    />
+  );
+
+
     case "textarea":
       return (
         <TextAreaField
@@ -65,15 +89,15 @@ export default function DynamicFieldRenderer({
     //     />
     //   );
 
-    // case "checkbox":
-    //   return (
-    //     <CheckboxField
-    //       label={field.label}
-    //       name={field.name}
-    //       register={register}
-    //       error={error}
-    //     />
-    //   );
+    case "checkbox":
+      return (
+        <CheckboxField
+          label={field.label}
+          name={field.name}
+          register={register}
+          error={error}
+        />
+      );
 
     default:
       return null;

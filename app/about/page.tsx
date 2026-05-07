@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div>
 
-        {/* <AboutHero /> */}
+        <AboutHero />
         <Biography />
         
             
