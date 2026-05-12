@@ -105,7 +105,7 @@ export default function Navbar() {
     if (isTop) {
       return isDarkNavbar
         ? "bg-transparent"
-        : "md:bg-transparent bg-gray-100";
+        : "bg-transparent ";
     }
 
     return isDarkNavbar

@@ -36,7 +36,7 @@ export default function HomeHero() {
           className="
             object-cover
             object-center
-            opacity-[0.8]
+            opacity-[0.9]
           "
         />
       </div>
