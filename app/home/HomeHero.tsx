@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { ArrowUpRight } from "lucide-react";
+import { Variants } from "framer-motion";
 
 export default function HomeHero() {
   const title = [
@@ -14,6 +15,41 @@ export default function HomeHero() {
   "Niyi",
   "Adebayo",
 ];
+const text = "Welcome to my world";
+
+// Parent variants to handle the staggering
+const container = {
+  hidden: { opacity: 0 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.05, delayChildren: 0.04 * i },
+  }),
+};
+
+// Child variants for each letter
+const child: Variants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: {
+      
+      type: "tween", 
+      ease: "easeOut",
+      duration: 4, // Each letter takes 1.5s to fully appear
+      repeat: Infinity,
+      repeatType: "reverse",
+      repeatDelay: 6, 
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+    rotateX: 90,
+  },
+};
+
+
   return (
     <section
       className="
@@ -34,9 +70,10 @@ export default function HomeHero() {
           fill
           priority
           className="
-            object-cover
+            
             object-center
             opacity-[0.9]
+           
           "
         />
       </div>
@@ -101,31 +138,19 @@ export default function HomeHero() {
             className="max-w-[620px]"
           >
             {/* SMALL INTRO */}
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.1,
-                duration: 0.6,
-              }}
-              className="
-                text-[13px]
-                md:text-[14px]
-                uppercase
-                tracking-[0.25em]
-                text-black/50
-                font-medium
-                mb-6
-              "
-            >
-              Welcome to my world
-            </motion.p>
+             <motion.p
+    style={{ overflow: "hidden", display: "flex", flexWrap: "wrap" }}
+    variants={container}
+    initial="hidden"
+    animate="visible"
+    className="text-[13px] md:text-[14px] uppercase tracking-[0.25em] text-black/50 font-medium mb-6"
+  >
+    {text.split("").map((letter, index) => (
+      <motion.span variants={child} key={index}>
+        {letter === " " ? "\u00A0" : letter}
+      </motion.span>
+    ))}
+  </motion.p>
 
             {/* MAIN TITLE */}
             <motion.h1
@@ -378,6 +403,7 @@ export default function HomeHero() {
               className="
                 relative
                 md:w-full
+                hidden md:block
                 w-[350px]
                 px-6
                 md:col-span-2

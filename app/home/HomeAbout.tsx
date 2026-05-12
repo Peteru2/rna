@@ -32,7 +32,7 @@ const fadeUp:Variants = {
 
 export default function HomeAbout() {
   return (
-    <section className="bg-gray-10 py-20 px-6">
+    <section className="bg-white/90 py-20 ">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -42,8 +42,8 @@ export default function HomeAbout() {
           amount: 0.25,
         }}
         className="
-          max-w-5xl
-          mx-auto
+          max-w-full
+          
         "
       >
         <motion.div
@@ -51,31 +51,19 @@ export default function HomeAbout() {
           className="
             relative
             overflow-hidden
-            rounded-[28px]
-            bg-white/70
+            bg-gray-100
+            py-10
             backdrop-blur-md
-            border
             border-black/[0.04]
             shadow-[0_20px_80px_rgba(0,0,0,0.06)]
           "
         >
-          {/* BACKGROUND GLOW */}
-          <div
-            className="
-              absolute
-              -top-20
-              -right-20
-              w-[260px]
-              h-[260px]
-              rounded-full
-              bg-[#f3d6d6]/40
-              blur-3xl
-            "
-          />
-
+          
           <div
             className="
               relative
+              max-w-6xl
+              mx-auto
               z-10
               grid
               grid-cols-1
@@ -102,6 +90,10 @@ export default function HomeAbout() {
                 relative
                 h-[500px]
                 md:h-[420px]
+                md:order-first
+                order-last
+                md:rounded-l-[24px]
+                md:rounded-r-[0px]
                 rounded-[24px]
                 overflow-hidden
               "
@@ -140,8 +132,13 @@ export default function HomeAbout() {
               variants={fadeUp}
               className="
                 relative
-                py-4
-                md:py-0
+                p-6
+                md:rounded-r-[28px]
+                md:rounded-l-[0px]
+
+                rounded-[28px]
+                bg-white
+                
               "
             >
               {/* MINI ICON */}
@@ -175,15 +172,7 @@ export default function HomeAbout() {
                   justify-center
                 "
               >
-                <div
-                  className="
-                    w-4
-                    h-4
-                    rounded-full
-                    border
-                    border-[#d78b8b]
-                  "
-                />
+                
               </motion.div>
 
               {/* TITLE */}
@@ -258,6 +247,7 @@ export default function HomeAbout() {
                         z-10
                         text-[14px]
                         font-medium
+                        cursor-pointer
                       "
                     >
                       Meet RNA

@@ -1,4 +1,5 @@
 import HomeAbout from "./home/HomeAbout";
+import HomeBook from "./home/HomeBook";
 import HomeHero from "./home/HomeHero";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
       <div >
         <HomeHero />
         <HomeAbout />
+        <HomeBook />
        </div>
   );
 }

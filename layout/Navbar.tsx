@@ -38,14 +38,7 @@ export default function Navbar() {
   const [isTop, setIsTop] =
     useState(true);
 
-  /*
-   |--------------------------------------------------------------------------
-   | ROUTE-AWARE NAVBAR SYSTEM
-   |--------------------------------------------------------------------------
-   | These are routes that use dark hero sections
-   | and therefore require white navbar content.
-   |--------------------------------------------------------------------------
-   */
+ 
 
   const darkNavbarRoutes = [
     "/getInTouch",
@@ -54,11 +47,7 @@ export default function Navbar() {
   const isDarkNavbar =
     darkNavbarRoutes.includes(pathname);
 
-  /*
-   |--------------------------------------------------------------------------
-   | NAVBAR THEME
-   |--------------------------------------------------------------------------
-   */
+  
 
   const navbarTheme = useMemo(() => {
     return {
@@ -109,8 +98,8 @@ export default function Navbar() {
     }
 
     return isDarkNavbar
-      ? "bg-black/60 backdrop-blur-xl border-b border-white/10"
-      : "bg-gray-100 backdrop-blur-xl border-b border-gray-300";
+      ? "bg-black/60 backdrop-blur-xl  border-white/10"
+      : "bg-gray-100 backdrop-blur-xl  border-gray-300";
   }, [isTop, isDarkNavbar]);
 
  
@@ -150,9 +139,7 @@ export default function Navbar() {
   }, []);
 
   /*
-   
-   | CLOSE MOBILE MENU ON ROUTE CHANGE
-
+    CLOSE MOBILE MENU ON ROUTE CHANGE
    */
 
   useEffect(() => {
@@ -354,7 +341,7 @@ export default function Navbar() {
               z-40
               transition-all
               duration-300
-              border-b
+              
               ${navbarTheme.mobileMenu}
             `}
           >
