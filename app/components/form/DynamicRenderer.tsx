@@ -3,9 +3,7 @@ import TextField from "./fields/TextFields";
 import PhoneField from "./fields/PhoneField";
 import DateField from "./fields/DateField";
 import RadioField from "./fields/RadioField";
-// import SelectField from "./fields/SelectField";
 import TextAreaField from "./fields/TextArea";
-// import TextAreaField from "./fields/TextAreaField";
 import CheckboxField from "./fields/CheckboxField";
 
 interface DynamicFieldRendererProps {

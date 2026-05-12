@@ -61,7 +61,7 @@ export default function MinistryForm() {
       key={field.name}
       field={field}
       register={register}
-      error={errors[field.name]}
+      error={errors[field.name as keyof typeof errors]} 
     />
   ))}
 

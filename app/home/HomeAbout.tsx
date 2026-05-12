@@ -100,7 +100,7 @@ export default function HomeAbout() {
               }}
               className="
                 relative
-                h-[380px]
+                h-[500px]
                 md:h-[420px]
                 rounded-[24px]
                 overflow-hidden
