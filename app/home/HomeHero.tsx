@@ -49,7 +49,50 @@ const child: Variants = {
   },
 };
 
+const firstSentenceContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.035,
+      delayChildren: 0.2,
+    },
+  },
+};
 
+const firstSenctenceChild: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 120,
+    rotateX: -90,
+    filter: "blur(12px)",
+    scale: 0.75,
+  },
+
+  visible: {
+    opacity: [0, 1, 1, 0],
+    y: [120, 0, 0, -40],
+    rotateX: [-90, 0, 0, 20],
+    filter: [
+      "blur(12px)",
+      "blur(0px)",
+      "blur(0px)",
+      "blur(6px)",
+    ],
+    scale: [0.75, 1, 1, 0.95],
+
+    transition: {
+      duration: 4.5,
+
+      ease: [0.22, 1, 0.36, 1],
+
+      repeat: Infinity,
+
+      repeatDelay: 2,
+
+      times: [0, 0.2, 0.8, 1],
+    },
+  },
+};
   return (
     <section
       className="
@@ -123,34 +166,58 @@ const child: Variants = {
           {/* ============================================================ */}
 
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.8,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="max-w-[620px]"
+      initial="hidden"
+      animate="visible"
+      variants={firstSentenceContainer}
+      style={{
+        perspective: 1000,
+      }}
+      className="relative"
+    >
+      <motion.p
+        className="
+          text-[10px]
+          md:text-[15px]
+          uppercase
+          tracking-[0.25em]
+          font-bold
+          text-black/60
+          mb-4
+          flex
+          flex-wrap
+          overflow-hidden
+          leading-[1.8]
+        "
+      >
+        {text.split("").map((letter, index) => (
+          <motion.span
+            key={index}
+            variants={firstSenctenceChild}
+            className="inline-block will-change-transform"
           >
-            {/* SMALL INTRO */}
-             <motion.p
-    style={{ overflow: "hidden", display: "flex", flexWrap: "wrap" }}
-    variants={container}
-    initial="hidden"
-    animate="visible"
-    className="text-[13px] md:text-[14px] uppercase tracking-[0.25em] text-black/50 font-medium mb-6"
-  >
-    {text.split("").map((letter, index) => (
-      <motion.span variants={child} key={index}>
-        {letter === " " ? "\u00A0" : letter}
-      </motion.span>
-    ))}
-  </motion.p>
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))}
+      </motion.p>
+
+      {/* GLOW LAYER */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        transition={{ delay: 0.8, duration: 1.2 }}
+        className="
+          absolute
+          inset-0
+          bg-gradient-to-r
+          from-transparent
+          via-white/40
+          to-transparent
+          blur-3xl
+          pointer-events-none
+        "
+      />
+ 
+  
 
             {/* MAIN TITLE */}
             <motion.h1
@@ -198,7 +265,7 @@ const child: Variants = {
       }}
       className="
         inline-block
-        will-change-transform font-work-sans
+        will-change-transform font-syne
       "
     >
       {word}
